@@ -87,7 +87,6 @@ const HomeScreen = () => {
   }
 }, []);
 
-  
   useEffect(() => {
     fetchReservations();
   }, [fetchReservations]);
@@ -188,23 +187,6 @@ const HomeScreen = () => {
   setShowQRModal(true); 
 };
 
-const now = new Date();
-
-const upcomingReservations = reservations.filter((res) => {
-  const [hour, minute] = res.time.split(':').map(Number);
-  const bookingDate = new Date(res.date);
-  const bookingDateTime = new Date(bookingDate.setHours(hour, minute));
-  return bookingDateTime >= now;
-});
-
-const pastReservations = reservations.filter((res) => {
-  const [hour, minute] = res.time.split(':').map(Number);
-  const bookingDate = new Date(res.date);
-  const bookingDateTime = new Date(bookingDate.setHours(hour, minute));
-  return bookingDateTime < now;
-});
-
-
   return (
   <SafeAreaView style={{ flex: 1 }}>
   <ScrollView
@@ -216,38 +198,6 @@ const pastReservations = reservations.filter((res) => {
     <Text style={styles.title}>UMLIB Room Reservation</Text>
     <Text style={styles.welcome_title}>Welcome back,</Text>
     <Text style={styles.name}>WONG WEN HAO</Text>
-
-    <TouchableOpacity
-  style={styles.notificationIcon}
-  onPress={() => setNotificationModalVisible(true)}
->
-  <Icon name="notifications" size={28} color="black" />
-</TouchableOpacity>
-
-<Modal visible={notificationModalVisible} transparent animationType="slide">
-  <View style={styles.modalContainerAction}>
-    <View style={styles.modalContentAction}>
-      <Text style={styles.sectionTitle}>Notifications</Text>
-      <ScrollView style={{ maxHeight: 300 }}>
-        {notifications.length === 0 ? (
-          <Text style={styles.noReservation}>No notifications yet.</Text>
-        ) : (
-          notifications.map((note, index) => (
-            <View key={index} style={styles.notificationItem}>
-              <Text style={styles.notificationText}>{note}</Text>
-            </View>
-          ))
-        )}
-      </ScrollView>
-      <TouchableOpacity
-        onPress={() => setNotificationModalVisible(false)}
-        style={styles.closeButtonAction}
-      >
-        <Icon name="close" size={28} color="black" />
-      </TouchableOpacity>
-    </View>
-  </View>
-</Modal>
 
     <ReminderList />
     <BookButton onPress={() => navigation.navigate('Booking')} />

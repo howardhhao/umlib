@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../theme/color";
 
 const homeStyles = StyleSheet.create({
     scrollContainer: {
@@ -8,7 +9,7 @@ const homeStyles = StyleSheet.create({
     reminder_container: {
       flexDirection: 'row', 
       alignItems: 'center', 
-      backgroundColor: '#f5f2ecff',
+      backgroundColor: colors.backgroundLight,
       marginTop: 5,
       marginBottom: 20,
       paddingLeft: 15,
@@ -55,7 +56,7 @@ const homeStyles = StyleSheet.create({
       marginRight: 20,
       marginTop: 20,
       fontFamily: 'QuicksandSemiBold',
-      color: '#192f59',
+      color: colors.primary,
     },
     welcome_title: {
       fontSize: 14,
@@ -73,7 +74,7 @@ const homeStyles = StyleSheet.create({
       fontFamily: 'QuicksandSemiBold',
     },
     button: {
-      backgroundColor: '#192f59',
+      backgroundColor: colors.primary,
       padding: 28,
       borderRadius: 10,
       marginBottom: 20,
@@ -94,7 +95,7 @@ const homeStyles = StyleSheet.create({
       paddingTop: 15,
     },
     upcoming_booking: {
-      backgroundColor: '#edf1f9ff',
+      backgroundColor: colors.backgroundMedium,
       marginBottom: 20,
       padding: 20,
       marginRight: 15,
@@ -118,7 +119,6 @@ const homeStyles = StyleSheet.create({
       marginBottom: 20,
       resizeMode: 'contain', 
   },
-  
     availability: {
       backgroundColor: '#E3E8F0',
       marginBottom: 20,
