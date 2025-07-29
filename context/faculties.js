@@ -1,0 +1,16 @@
+ export const faculties = [
+    'Built Environment',
+    'Languages and Linguistics',
+    'Pharmacy',
+    'Engineering',
+    'Education',
+    'Dentistry',
+    'Business and Economics',
+    'Medicine',
+    'Science',
+    'Computer Science and Information Technology',
+    'Arts and Social Sciences',
+    'Creative Arts',
+    'Law',
+    'Sport & Exercise Sciences',
+  ];
